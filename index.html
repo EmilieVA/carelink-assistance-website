@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Carelink</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/232dd2b46f.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="images/logo.jpg" type="image/jpg">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map { /* Style for map container */
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+  <div class="banner">
+    <div class="container2">
+      <h1>         .                                 </h1>
+    </div>
+  </div>
+
+
+  <div class="container">
+   <h1>Learn more about us</h1>
+   <h2> -----Our mission----- </h2>
+   <p>Our mission is to provide personalized assistance and supportsystem in the medical endeavours of tourist in France, ensuring their safety, comfort, and peace of mind during their stay.</p>
+  </div>
+
+  <div class="container">
+   <h2> -----What is the problem?----- </h2>
+   <p>France being a very touristic country with roughly 100 million tourists every year. With the language barrier it is hard to get through life here. And it is even worse in the healthcare industry. Whether on call with a medical practitioner, waiting in the emergency room or even filling out paperwork, it is already hard for the french population so we realised how much harder it must be for people visiting it.</p>
+  </div>
+
+  <div class="container">
+   <h2> -----Concrete solutions----- </h2>
+   <p>We have decided to create Carelink. Carelink is a system that puts any person who feels the need to, to have an assistant in the medical field but it is also so much more than that. We offer 4 separate services:</p>
+   <p class="title" >- Translation of your documents</p>
+   <p>Struggling with understanding all the paperwork needed to be safe while you travel to France? Don't worry Carelink can help you, with the help of our buddies you can understand all of the documents that you have to provide before you can finally breath the french air.</p>
+   <p class="title">- Help you find the closest hospital</p>
+   <p>If you are injured and don't know where to go don't worry! Carelink can help you know where you need to go in just one click by providing you with an intinerary to the nearest qualified medical practitionners.</p>
+   <p class="title">- Get help for your administration</p>
+   <p>Once again if you fail to understand the french paperwork and struggle to comprehend if your insurance covers you in french; get linked to one of our buddies and they will give you all the advice you need.</p>
+   <p class="title">- Find an english speaking doctor</p>
+   <p>Do you need to see a doctor? Are you scared that they will likely nit be able to help you due to the language barrier? Once again Carelink will be able to tell you and provide you the details/contact info of the nearest medical practitionner that speaks your language or english.</p>
+  </div>
+
+  <div class="container">
+    <img src="images/linky.jpeg" class="avatar2" alt="linky">
+    <p>We are pleased to introduce our mascot Linky, which is a cute and friendly snake, designed to reassure and guide travelers in their adventures around the world. With a bright and welcoming color palette, it represents safety and well-being. Equipped with medical accessories, such as a stethoscope, it symbolizes the personalized medical assistance offered by CareLink. Her reassuring presence and friendly smile make her an inseparable companion for travelers, reminding them that health and safety are always a priority.</p>
+  </div>
+
+  <div class="container">
+    <h2>Learn some more about us</h2>
+
+    <div class="cards">
+      <div class="card">
+        <img src="images/seekhelp.jpeg" class="image" alt="Seek help">
+        <h2>Seek help in your medical journey</h2>
+        <a href="https://iw0ox4lnj0l.typeform.com/to/EaKdYUqC" class="btn-tan" target="_blank">Click here</a>
+      </div>
+      <div class="card">
+        <img src="images/help.jpeg" class="image" alt="Become a buddy">
+        <h2>How to become a buddy</h2>
+        <a href="https://iw0ox4lnj0l.typeform.com/to/JVrpcg7g" class="btn-tan" target="_blank">Click here</a>
+      </div>
+
+  <div class="container">
+        <h2>Find Nearest Doctor</h2>
+        <div id="map"></div>
+  </div>
+  <div id="search-container">
+        <input type="text" id="search-input" placeholder="Enter location or type of doctor">
+        <button onclick="searchDoctors()">Search</button>
+  </div>
+    <div id="map"></div> <!-- This is where the map will be displayed -->
+    <script>
+        // JavaScript code for initializing the map
+        var map = L.map('map').setView([51.505, -0.09], 13); // Set initial coordinates and zoom level
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Add OpenStreetMap tiles
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    </script>
+
+
+  <div class="container2">
+      <h3>Our Team</h3>
+        <div class="cards2">
+
+          <div class="card2">
+            <img class="avatar" src="images/ade.jpeg" alt="Adelaide">
+            <p>Adélaide CHAUVE</p>
+          </div>
+          <div class="card2">
+            <img class="avatar" src="images/charlotte.jpeg" alt="Charlotte">
+            <p>Charlotte BINEAU</p>
+          </div>
+          <div class="card2">
+            <img class="avatar" src="images/clarisse.jpeg" alt="Clarisse">
+            <p>Clarisse QUELIN</p>
+          </div>
+          <div class="card2">
+            <img class="avatar" src="images/clemence.jpeg" alt="Clémence">
+            <p>Clémence PILLET</p>
+          </div>
+          <div class="card2">
+            <img class="avatar" src="images/emilie1.jpeg" alt="Emilie">
+            <p>Emilie VAILLS</p>
+          </div>
+          <div class="card2">
+            <img class="avatar" src="images/emilie2.jpeg" alt="EmilieV">
+            <p>Emilie VENTRE</p>
+          </div>
+          <div class="card2">
+            <img class="avatar" src="images/heloise.jpeg" alt="Heloise">
+            <p>Héloise CHARMET</p>
+          </div>
+          <div class="card2">
+            <img class="avatar" src="images/louise.jpeg" alt="Louise">
+            <p>Louise LAFOSSE</p>
+          </div>
+          <div class="card2">
+            <img class="avatar" src="images/max.jpeg" alt="Max">
+            <p>Maximilien BAUDET</p>
+          </div>
+          <div class="card2">
+           <img class="avatar" src="images/tess.jpeg" alt="Tess">
+           <p>Tess GAUDERLOT</p>
+          </div>
+        </div>
+  </div>
+
+  <div class="typeform-widget" data-url="https://iw0ox4lnj0l.typeform.com/to/Iq3o57Iv" style="width: 100%; height: 500px; background-color: #DDD7CB; color: #8A8374;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+
+  <div class="container">
+     <img  class="logo" src="images/logo.jpg">
+  </div>
+
+     <div class="bottom-banner">
+        <div class="left-content">
+          <img class="logo2" src="images/logo.jpg">
+          <p>our partners</p>
+          <p>our business model</p>
+        </div>
+        <div class="right-content">
+          <a href="https://www.instagram.com/care.linkassistance?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-square-instagram"></i>
+          </a>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

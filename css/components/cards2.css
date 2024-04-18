@@ -1,0 +1,36 @@
+.cards2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  align-items: initial;
+  box-align: center;
+
+}
+.card2 {
+  background-color: rgb(0, 50, 250, 0.25); /* Set background color to blue */
+  display: flex;
+  flex-direction: row; /* Set flex direction to row to display cards horizontally */
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center; /* Align items to the start of the container */
+  box-shadow: 0px 10px 30px rgba(134, 124, 91, 0.5); /* Updated RGBA syntax */
+  border-radius: 6px;
+  margin: 15px;
+  flex-basis: 150px; /* Adjust the width of each card */
+  flex-grow: 0.25; /* Ensure cards don't grow beyond their specified width */
+  align-items: center;
+  box-align: center;
+
+
+
+}
+
+.card2 img {
+  width: 60px;
+}
+
+.card2 p {
+  flex-grow: 1;
+  padding: 5px;
+  font-size: 15px;
+}

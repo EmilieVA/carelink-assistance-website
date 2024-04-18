@@ -1,0 +1,45 @@
+   body {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .content {
+        padding-bottom: 50px; /* Adjust the padding to accommodate the bottom banner */
+    }
+
+    .bottom-banner {
+        background-color: #3548A3;
+        color: white;
+        padding: 10px 20px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .bottom-banner .left-content, .bottom-banner .right-content {
+        display: inline-block;
+    }
+
+    .bottom-banner .left-content {
+        float: left;
+        text-align: left;
+    }
+
+    .bottom-banner .right-content {
+        float: right;
+        text-align: right;
+        font-size: 120px;
+    }
+
+
+    .logo2 {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+    }
+
+
